@@ -1,19 +1,19 @@
 #include <iostream>
 #include <string> 
-
+#include <vector>
 
 void program(){
     std::cout<<"What you want to do with your list:\n[1]-Add task\n[2]-Delete task\n[3]-Show all tasks\n[4]-Mark as done\n[5]-End the program"<<std::endl;
 
 }
 void optionOne(){
- 
+    char decision = 'y';
     int option = 1; 
-    do{
+    do{1
 
-        std::cout<<"Add task: ";
-        std::string task;
-        std::cin>>task;
+        std::string tasks[100];
+        std::cout << "Add task: ";
+        std::getline(std::cin, tasks[100]);
         
         std::cout<<"Do you want to add another task (y/n): ";
         char decision;
@@ -23,11 +23,16 @@ void optionOne(){
             continue;
         }else if (decision =='n'){
             break;
+            option = 0;
         }else{//dodac ponowne probowanie
             break;
-        }   
-
-    }while(option != 0);
+            option = 0;
+        } 
+        
+        
+        
+    }while(option != 0 && decision != 'n');
+    
     
     
  }
@@ -47,6 +52,7 @@ void optionFour(){
 }
 
 int main(){
+    std::string tasks[100];
     int choice = 0;
     do{
         program();
